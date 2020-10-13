@@ -38,6 +38,18 @@
 				const ctx = tile.getContext("2d");
 				ctx.fillStyle = "rgb(150,150,180)" ;
 				ctx.fillRect(0,0,tile.width,tile.height);
+				
+				//http://monomoti.hatenablog.jp/entry/ac2016
+				var coordsContainer = L.DomUtil.create('ul', 'mycoords',tile);
+
+				coordsContainer.innerHTML = "<li>こっちは選択できない</li>"
+				    + "<li>z/x/y:&nbsp;<input type=\"text\" value=\" "+ coords.z + "/" + coords.x + "/"  + coords.y  +  " \" ></li>";
+
+				L.DomEvent.on(coordsContainer,"click",L.DomEvent.stopPropagation);
+				L.DomEvent.on(coordsContainer,"mousedown",L.DomEvent.stopPropagation);
+				L.DomEvent.on(coordsContainer,"dblclick",L.DomEvent.stopPropagation);
+				L.DomEvent.on(coordsContainer,"mousewheel",L.DomEvent.stopPropagation);
+
 				gsiv.loadtile(coords.z-1,coords.x,coords.y).then(data=>{
 					const layers = data.layers ;
 					ctx.fillStyle = "rgb(250,250,250)" ;
@@ -56,6 +68,8 @@
 					ctx.fillRect(0,0,tile.width,tile.height);
 					done(error,tile);
 				})
+				
+				
 				return tile;
 			}
 		})
