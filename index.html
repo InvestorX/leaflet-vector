@@ -74,11 +74,7 @@
 			}
 		})
 		const vlayer = new CanvasLayer({
-			tileSize:512,
-			attribution: "<a href='https://github.com/gsi-cyberjapan/gsimaps-vector-experiment' target='_blank'>国土地理院ベクトルタイル提供実験</a>"})
-
-		const map = L.map('map',{
-			zoom:9,
+			tileSize:512,			
 			//https://github.com/ebrelsford/leaflet-tilelayer-vector/blob/dev/example/index.html
 			// remove tiles outside viewport
 			unloadInvisibleTiles: true,
@@ -89,6 +85,11 @@
 			//maxNativeZoom:18,
 			//maxDetailZoom, // default undefined
 			serverZooms: [9,10,11,12,13,14,15,16],
+			attribution: "<a href='https://github.com/gsi-cyberjapan/gsimaps-vector-experiment' target='_blank'>国土地理院ベクトルタイル提供実験</a>"})
+
+		const map = L.map('map',{
+			zoom:9,
+
 			zoomSnap:0,
 			center:[43.061111, 141.356476]
 		});
