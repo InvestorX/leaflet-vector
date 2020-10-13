@@ -63,6 +63,11 @@
 
 		const map = L.map('map',{
 			zoom:9,
+			//https://github.com/ebrelsford/leaflet-tilelayer-vector/blob/dev/example/index.html
+			// remove tiles outside viewport
+			unloadInvisibleTiles: true,
+			// no tile loading while panning (slow with large vector tiles)
+			updateWhenIdle: true,
 			//minZoom:13,
 			//maxZoom:20,
 			//maxNativeZoom:18,
