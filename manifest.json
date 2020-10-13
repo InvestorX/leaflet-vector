@@ -1,6 +1,6 @@
 {
-  "name": "PWA Sample",
-  "short_name": "PWA",
+  "name": "国土地理院Vectorテスト",
+  "short_name": "VectorMAP",
   "background_color": "#fc980c",
   "icons": [{
       "src": "./icon-256.png",
